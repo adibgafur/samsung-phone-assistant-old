@@ -5,3 +5,4 @@ __pycache__/
 phones.db
 data/scraped_phones.json
 .pytest_cache/
+*.zip
