@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsung Phone Assistant | AI Query & Review System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Top Alert Banner for Missing API Key -->
+  <div id="apiAlertBanner" class="api-alert-banner">
+    <span>⚠️ <strong>Groq API Key Not Configured:</strong> Add your API key to activate the RAG Chatbot and Multi-Agent reviewer.</span>
+    <button id="bannerSetKeyBtn" class="btn-banner">🔑 Add API Key</button>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">S</div>
+        <div class="brand-info">
+          <h1>Samsung Galaxy Assistant <span class="brand-tag">AI Multi-Agent</span></h1>
+          <p>GSMArena Scraper • PostgreSQL/SQLite • Groq RAG • Multi-Agent Reviews</p>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="tab-btn active" data-tab="chatTab">💬 Chatbot</button>
+        <button class="tab-btn" data-tab="agentTab">🤖 Multi-Agent Review</button>
+        <button class="tab-btn" data-tab="catalogTab">📱 Phone Catalog</button>
+        <button class="tab-btn" data-tab="archTab">ℹ️ Architecture</button>
+      </nav>
+
+      <div class="header-actions">
+        <!-- API Key Status Pill Button -->
+        <button id="apiKeyPill" class="api-key-pill" title="Configure Groq API Key">
+          <span id="apiKeyDot" class="status-dot"></span>
+          <span id="apiKeyText">API Key</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace Content -->
+  <main class="main-content">
+
+    <!-- TAB 1: Conversational Chatbot (RAG) -->
+    <section id="chatTab" class="tab-pane active">
+      <div class="glass-panel chat-container">
+        <div class="chat-header">
+          <div class="chat-header-info">
+            <h2>Conversational Smartphone Expert</h2>
+            <p>Grounded in real specifications from GSMArena with automated catalogue ranking.</p>
+          </div>
+          <button id="clearChatBtn" class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">🧹 Reset Chat</button>
+        </div>
+
+        <!-- Quick Prompts from the specification -->
+        <div class="quick-prompts">
+          <button class="prompt-chip">What are the camera specs of the Samsung Galaxy S23?</button>
+          <button class="prompt-chip">Which Samsung phone has the best battery life?</button>
+          <button class="prompt-chip">How does the Galaxy S23 compare to the S22 in terms of performance?</button>
+          <button class="prompt-chip">Compare Galaxy S24 Ultra vs S23 Ultra</button>
+          <button class="prompt-chip">Which model has the largest display?</button>
+        </div>
+
+        <!-- Conversation History -->
+        <div id="chatMessages" class="chat-history">
+          <div class="chat-bubble assistant">
+            <p>👋 Welcome! I am your <strong>Samsung Intelligence Assistant</strong>.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+              You can ask me questions about specifications, battery rankings, cameras, processors, or comparisons. If you haven't yet, you can configure your <strong>Groq API Key</strong> at the top right.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <div class="chat-input-bar">
+          <input 
+            type="text" 
+            id="chatInput" 
+            class="chat-input" 
+            placeholder="Ask anything about Samsung phones (e.g. Which phone has the best battery life?)..." 
+            autocomplete="off"
+          />
+          <button id="chatSendBtn" class="btn-primary">
+            <span>Send</span>
+            <span>➤</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Multi-Agent Review System -->
+    <section id="agentTab" class="tab-pane">
+      <div class="agent-grid">
+        <!-- Pipeline Control Side -->
+        <div class="agent-card">
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Multi-Agent Pipeline</h3>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">
+              Two specialized agents work together to generate deep, objective product reviews.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneSelect">Select Samsung Phone</label>
+            <select id="phoneSelect" class="select-phone">
+              <option value="">Loading phones...</option>
+            </select>
+          </div>
+
+          <button id="reviewBtn" class="btn-primary" style="width: 100%; justify-content: center;">
+            🚀 Run Multi-Agent Review
+          </button>
+
+          <!-- Visual Workflow Tracker -->
+          <div class="agent-pipeline-flow">
+            <div id="step1Node" class="pipeline-node">
+              <div class="node-icon">🔍</div>
+              <div>
+                <div class="node-title">SpecRetrievalAgent</div>
+                <div class="node-desc">Queries technical specs from DB & computes catalogue leaderboards.</div>
+              </div>
+            </div>
+            <div id="step2Node" class="pipeline-node">
+              <div class="node-icon">✍️</div>
+              <div>
+                <div class="node-title">ReviewWriterAgent</div>
+                <div class="node-desc">Synthesizes structured product review with Groq LLM (Overview, Display, Camera, Battery, Pros, Cons, Verdict).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Output Side -->
+        <div class="review-display">
+          <div class="review-header">
+            <h3 id="reviewHeader">Select a phone and run the pipeline</h3>
+            <button id="copyReviewBtn" class="btn-secondary" style="display: none; padding: 0.4rem 0.8rem; font-size: 0.8rem;">
+              📋 Copy Markdown
+            </button>
+          </div>
+          <div id="reviewContent" class="review-content">
+            <div style="text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
+              <p>Choose any Samsung model from the left and click <strong>Run Multi-Agent Review</strong>.</p>
+              <p style="font-size: 0.8rem; margin-top: 0.5rem;">
+                The <code>SpecRetrievalAgent</code> will collect verified specs and ranking data, then the <code>ReviewWriterAgent</code> will generate an insightful, structured review.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Phone Database Catalog -->
+    <section id="catalogTab" class="tab-pane">
+      <div class="catalog-header">
+        <div>
+          <h2>Samsung Device Catalogue</h2>
+          <p style="font-size: 0.82rem; color: var(--text-secondary);">
+            Structured phone data scraped from GSMArena and stored in the database.
+          </p>
+        </div>
+        <input 
+          type="text" 
+          id="catalogSearch" 
+          class="catalog-search" 
+          placeholder="Search by phone name (e.g. S24, Ultra, Flip)..."
+        />
+      </div>
+
+      <div id="phonesGrid" class="phones-grid">
+        <div style="text-align: center; padding: 3rem; color: var(--text-muted); grid-column: 1/-1;">
+          <span class="spinner"></span> Loading devices...
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Architecture & Workflow -->
+    <section id="archTab" class="tab-pane">
+      <div class="glass-panel arch-card">
+        <div>
+          <h2>System Architecture & Workflow</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.25rem;">
+            Overview of the four core pillars built for the Samsung Phone Query and Review System.
+          </p>
+        </div>
+
+        <div class="arch-steps">
+          <div class="arch-step-box">
+            <div class="arch-step-num">Step 1</div>
+            <h4>Web Scraper & Database</h4>
+            <p>
+              Scrapes 10-15 popular Samsung smartphones from GSMArena (BeautifulSoup + requests) with polite delays. Normalizes battery, display size, RAM, and prices into relational tables (PostgreSQL / SQLite).
+            </p>
+          </div>
+
+          <div class="arch-step-box">
+            <div class="arch-step-num">Step 2</div>
+            <h4>Conversational RAG Chatbot</h4>
+            <p>
+              Retrieves exact specifications and precomputed catalogue rankings based on entity extraction and TF-IDF search. Groq LLM (Llama 3.3 70B) generates grounded answers with zero hallucinations.
+            </p>
+          </div>
+
+          <div class="arch-step-box">
+            <div class="arch-step-num">Step 3</div>
+            <h4>Multi-Agent Pipeline</h4>
+            <p>
+              Divided into two autonomous roles: <code>SpecRetrievalAgent</code> queries the database and computes relative market rank, while <code>ReviewWriterAgent</code> crafts a comprehensive, structured product review.
+            </p>
+          </div>
+
+          <div class="arch-step-box">
+            <div class="arch-step-num">Step 4</div>
+            <h4>FastAPI Service & Web UI</h4>
+            <p>
+              Clean RESTful endpoints (<code>/chat</code>, <code>/review</code>, <code>/phones</code>, <code>/api/verify-key</code>) paired with an interactive frontend that supports dynamic in-browser Groq API key configuration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: API Key & LLM Provider Configuration -->
+  <div id="apiKeyModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>⚙️ AI Provider & API Settings</h3>
+        <button id="closeKeyModalBtn" class="btn-close">&times;</button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+        Configure your AI backend. Choose between <strong>Groq Cloud API</strong> (free, fast cloud) or a <strong>Localhost LLM</strong> (Ollama, LM Studio, vLLM running on your machine).
+      </p>
+
+      <!-- Provider selector -->
+      <div class="form-group">
+        <label>Backend Provider</label>
+        <div style="display: flex; gap: 0.75rem;">
+          <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer; color: var(--text-primary);">
+            <input type="radio" name="providerMode" value="groq" id="providerGroq" checked> Groq Cloud
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer; color: var(--text-primary);">
+            <input type="radio" name="providerMode" value="localhost" id="providerLocalhost"> Localhost (Ollama / Local LLM)
+          </label>
+        </div>
+      </div>
+
+      <!-- Localhost Base URL & Model (hidden by default) -->
+      <div id="localhostSettings" style="display: none; flex-direction: column; gap: 0.75rem; background: var(--bg-secondary); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+        <div class="form-group">
+          <label for="localBaseUrl">Localhost API Base URL</label>
+          <input 
+            type="text" 
+            id="localBaseUrl" 
+            class="input-field" 
+            value="http://localhost:11434/v1" 
+            placeholder="http://localhost:11434/v1 (Ollama) or http://localhost:1234/v1 (LM Studio)"
+          />
+          <span style="font-size: 0.72rem; color: var(--text-muted);">Common endpoints: Ollama (<code>http://localhost:11434/v1</code>), LM Studio (<code>http://localhost:1234/v1</code>)</span>
+        </div>
+        <div class="form-group">
+          <label for="localModelName">Model Name</label>
+          <input 
+            type="text" 
+            id="localModelName" 
+            class="input-field" 
+            value="llama3" 
+            placeholder="e.g. llama3, mistral, qwen2.5"
+          />
+        </div>
+      </div>
+
+      <div class="form-group" id="apiKeyGroup">
+        <label for="apiKeyInput" id="apiKeyLabel">Groq API Key</label>
+        <div class="input-with-button">
+          <input 
+            type="password" 
+            id="apiKeyInput" 
+            class="input-field" 
+            placeholder="gsk_..." 
+            autocomplete="off"
+          />
+          <button id="toggleKeyVisibility" class="btn-secondary" type="button" title="Show/Hide">👁️</button>
+        </div>
+      </div>
+
+      <div class="form-group" id="groqModelGroup">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label for="groqModelSelect">Groq Model</label>
+          <button id="detectModelsBtn" class="btn-banner" type="button" style="font-size: 0.7rem; padding: 0.15rem 0.5rem; background: var(--bg-tertiary); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">
+            🔄 Detect Key Models
+          </button>
+        </div>
+        <select id="groqModelSelect" class="select-phone" style="padding: 0.65rem 1rem;">
+          <option value="llama-3.1-8b-instant">llama-3.1-8b-instant</option>
+          <option value="llama-3.3-70b-versatile">llama-3.3-70b-versatile</option>
+          <option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option>
+          <option value="openai/gpt-oss-20b">openai/gpt-oss-20b</option>
+          <option value="qwen/qwen3.8-27b">qwen/qwen3.8-27b</option>
+        </select>
+        <span style="font-size: 0.72rem; color: var(--text-muted);">Click <em>Detect Key Models</em> to list the exact models enabled on your account.</span>
+      </div>
+
+      <div id="apiKeyFeedback" style="font-size: 0.8rem; min-height: 1.2rem;"></div>
+
+      <div id="serverKeyNotice" style="font-size: 0.75rem; color: var(--text-muted); background: var(--bg-secondary); padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color);">
+        Checking server configuration...
+      </div>
+
+      <p id="getFreeKeyLink" style="font-size: 0.78rem; color: var(--text-muted);">
+        Don't have a Groq key? Get one free at <a href="https://console.groq.com/keys" target="_blank" style="color: #38bdf8; text-decoration: underline;">console.groq.com</a>.
+      </p>
+
+      <div class="modal-footer">
+        <button id="clearKeyBtn" class="btn-secondary" type="button">Reset Settings</button>
+        <button id="saveKeyBtn" class="btn-secondary" type="button">Save</button>
+        <button id="testAndSaveKeyBtn" class="btn-primary" type="button">🧪 Test & Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Full Phone Specifications View -->
+  <div id="specsModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width: 720px;">
+      <div class="modal-header">
+        <h3 id="specsModalTitle">Phone Specifications</h3>
+        <button id="closeSpecsModalBtn" class="btn-close">&times;</button>
+      </div>
+      <div id="specsModalBody">
+        <div style="text-align: center; padding: 2rem;"><span class="spinner"></span> Loading specifications...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+[
+  {
+    "name": "Samsung Galaxy S21",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2021, January 14"
+      },
+      "Body": {
+        "Weight": "169 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.2 inches",
+        "Resolution": "1080 x 2400"
+      },
+      "Platform": {
+        "OS": "Android 11, upgradable to Android 14",
+        "Chipset": "Exynos 2100 / Snapdragon 888"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "12 MP wide + 12 MP ultrawide + 64 MP telephoto"
+      },
+      "Selfie camera": {
+        "Single": "10 MP"
+      },
+      "Battery": {
+        "Type": "4000 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 799"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S21 Ultra",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2021, January 14"
+      },
+      "Body": {
+        "Weight": "227 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.8 inches",
+        "Resolution": "1440 x 3200"
+      },
+      "Platform": {
+        "OS": "Android 11, upgradable to Android 14",
+        "Chipset": "Exynos 2100 / Snapdragon 888"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB/512GB 16GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "108 MP wide + 10 MP periscope + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "40 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 1199"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S22",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2022, February 09"
+      },
+      "Body": {
+        "Weight": "167 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.1 inches",
+        "Resolution": "1080 x 2340"
+      },
+      "Platform": {
+        "OS": "Android 12, upgradable to Android 15",
+        "Chipset": "Exynos 2200 / Snapdragon 8 Gen 1"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "50 MP wide + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "10 MP"
+      },
+      "Battery": {
+        "Type": "3700 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 799"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S22 Ultra",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2022, February 09"
+      },
+      "Body": {
+        "Weight": "229 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.8 inches",
+        "Resolution": "1440 x 3088"
+      },
+      "Platform": {
+        "OS": "Android 12, upgradable to Android 15",
+        "Chipset": "Exynos 2200 / Snapdragon 8 Gen 1"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB/512GB/1TB 12GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "108 MP wide + 10 MP periscope + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "40 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "45W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 1199"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S23",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, February 01"
+      },
+      "Body": {
+        "Weight": "168 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.1 inches",
+        "Resolution": "1080 x 2340"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Snapdragon 8 Gen 2"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB/512GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "50 MP wide + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "12 MP"
+      },
+      "Battery": {
+        "Type": "3900 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 799"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S23 Ultra",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, February 01"
+      },
+      "Body": {
+        "Weight": "234 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.8 inches",
+        "Resolution": "1440 x 3088"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Snapdragon 8 Gen 2"
+      },
+      "Memory": {
+        "Internal": "256GB/512GB/1TB 12GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "200 MP wide + 10 MP periscope + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "12 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "45W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 1199"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S24",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2024, January 17"
+      },
+      "Body": {
+        "Weight": "167 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.2 inches",
+        "Resolution": "1080 x 2340"
+      },
+      "Platform": {
+        "OS": "Android 14, upgradable to Android 17",
+        "Chipset": "Exynos 2400 / Snapdragon 8 Gen 3"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB/512GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "50 MP wide + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "12 MP"
+      },
+      "Battery": {
+        "Type": "4000 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 799"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy S24 Ultra",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2024, January 17"
+      },
+      "Body": {
+        "Weight": "232 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.8 inches",
+        "Resolution": "1440 x 3120"
+      },
+      "Platform": {
+        "OS": "Android 14, upgradable to Android 17",
+        "Chipset": "Snapdragon 8 Gen 3"
+      },
+      "Memory": {
+        "Internal": "256GB/512GB/1TB 12GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "200 MP wide + 50 MP periscope + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "12 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "45W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 1299"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy A54",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, March 15"
+      },
+      "Body": {
+        "Weight": "202 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.4 inches",
+        "Resolution": "1080 x 2340"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Exynos 1380"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "50 MP wide + 12 MP ultrawide + 5 MP macro"
+      },
+      "Selfie camera": {
+        "Single": "32 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "25W wired"
+      },
+      "Misc": {
+        "Price": "$ 449"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy A34",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, March 15"
+      },
+      "Body": {
+        "Weight": "199 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.6 inches",
+        "Resolution": "1080 x 2408"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Mediatek Dimensity 1080"
+      },
+      "Memory": {
+        "Internal": "128GB/256GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "48 MP wide + 8 MP ultrawide + 5 MP macro"
+      },
+      "Selfie camera": {
+        "Single": "13 MP"
+      },
+      "Battery": {
+        "Type": "5000 mAh",
+        "Charging": "25W wired"
+      },
+      "Misc": {
+        "Price": "$ 379"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy Z Fold5",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, July 26"
+      },
+      "Body": {
+        "Weight": "253 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "7.6 inches",
+        "Resolution": "1812 x 2176"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Snapdragon 8 Gen 2"
+      },
+      "Memory": {
+        "Internal": "256GB/512GB/1TB 12GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "50 MP wide + 10 MP telephoto + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "10 MP"
+      },
+      "Battery": {
+        "Type": "4400 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 1799"
+      }
+    }
+  },
+  {
+    "name": "Samsung Galaxy Z Flip5",
+    "url": null,
+    "image_url": null,
+    "specs": {
+      "Launch": {
+        "Announced": "2023, July 26"
+      },
+      "Body": {
+        "Weight": "187 g"
+      },
+      "Display": {
+        "Type": "Dynamic AMOLED 2X, 120Hz",
+        "Size": "6.7 inches",
+        "Resolution": "1080 x 2640"
+      },
+      "Platform": {
+        "OS": "Android 13, upgradable to Android 16",
+        "Chipset": "Snapdragon 8 Gen 2"
+      },
+      "Memory": {
+        "Internal": "256GB/512GB 8GB RAM"
+      },
+      "Main Camera": {
+        "Triple": "12 MP wide + 12 MP ultrawide"
+      },
+      "Selfie camera": {
+        "Single": "10 MP"
+      },
+      "Battery": {
+        "Type": "3700 mAh",
+        "Charging": "25W wired, 15W wireless"
+      },
+      "Misc": {
+        "Price": "$ 999"
+      }
+    }
+  }
+]
